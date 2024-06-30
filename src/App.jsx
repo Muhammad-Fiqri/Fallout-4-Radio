@@ -79,17 +79,17 @@ export default function App() {
                 <audio loop id='audioRadioFreedom'
                     src="./utomp3.com - Fallout 4   Radio Freedom   Minutemen Radio   Full Playlist Soundtrack.mp3"></audio>
                 <div className="stationOption text-center mt-[25px]">
-                    <div onClick={playDiamondCityRadio} 
+                    <div onClick={playDiamondCityRadio} loop
                     className="diamondCityRadioOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Diamond City Radio</p>
                     </div>
-                    <div onClick={playClassicalRadio}  
+                    <div onClick={playClassicalRadio} loop
                     className="classicalRadioOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Classical Radio</p>
                     </div>
-                    <div onClick={playRadioFreedom}  
+                    <div onClick={playRadioFreedom} loop
                     className="radioFreedomOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Radio Freedom</p>
