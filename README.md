@@ -8,3 +8,11 @@ Library I used in this project:
 Tailwind CSS
 React JS
 Inter Google Font
+
+Version Alpha 1:
+1. The Wave Now Play When Station is Chosen
+2. The Green Square Now Set When Station is Chosen
+3. Music Also Plays In The Background
+
+Next Goal:
+1. Make The Music Actually Play Lives
