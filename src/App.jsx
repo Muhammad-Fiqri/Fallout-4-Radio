@@ -1,17 +1,35 @@
 import Wave from 'react-wavify';
 import { useRef } from 'react';
+import { useState } from 'react';
 
 export default function App() {
+    const [waveAmplitudo,setWaveAmplitudo] = useState(5);
+
     function playDiamondCityRadio() {
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
+
+        let diamondCitySquare = document.querySelector(".diamondCityRadioOption > .squareIcon");
+        let classicalRadioSquere = document.querySelector(".classicalRadioOption > .squareIcon");
+        let radioFreedomSquare = document.querySelector(".radioFreedomOption > .squareIcon");
+
         if(audioDiamondCity.paused){
             audioDiamondCity.play();
             audioClassicalRadio.pause();
             audioRadioFreedom.pause();
+
+            diamondCitySquare.style.backgroundColor = "#14FF00";
+            classicalRadioSquere.style.backgroundColor = "#032400";
+            radioFreedomSquare.style.backgroundColor = "#032400";
+
+            setWaveAmplitudo(30);
         } else {
             audioDiamondCity.pause();
+
+            diamondCitySquare.style.backgroundColor = "#032400";
+
+            setWaveAmplitudo(5);
         }
     }
 
@@ -19,12 +37,27 @@ export default function App() {
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
+        
+        let diamondCitySquare = document.querySelector(".diamondCityRadioOption > .squareIcon");
+        let classicalRadioSquere = document.querySelector(".classicalRadioOption > .squareIcon");
+        let radioFreedomSquare = document.querySelector(".radioFreedomOption > .squareIcon");
+        
         if(audioClassicalRadio.paused){
             audioClassicalRadio.play();
             audioDiamondCity.pause();
             audioRadioFreedom.pause();
+
+            diamondCitySquare.style.backgroundColor = "#032400";
+            classicalRadioSquere.style.backgroundColor = "#14FF00";
+            radioFreedomSquare.style.backgroundColor = "#032400";
+            
+            setWaveAmplitudo(30);
         } else {
             audioClassicalRadio.pause()
+
+            classicalRadioSquere.style.backgroundColor = "#032400";
+
+            setWaveAmplitudo(5);
         }
     }
 
@@ -32,12 +65,27 @@ export default function App() {
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
+        
+        let diamondCitySquare = document.querySelector(".diamondCityRadioOption > .squareIcon");
+        let classicalRadioSquere = document.querySelector(".classicalRadioOption > .squareIcon");
+        let radioFreedomSquare = document.querySelector(".radioFreedomOption > .squareIcon");
+
         if(audioRadioFreedom.paused){
             audioRadioFreedom.play();
             audioDiamondCity.pause();
             audioClassicalRadio.pause();
+
+            diamondCitySquare.style.backgroundColor = "#032400";
+            classicalRadioSquere.style.backgroundColor = "#032400";
+            radioFreedomSquare.style.backgroundColor = "#14FF00";
+
+            setWaveAmplitudo(30);
         } else {
             audioRadioFreedom.pause();
+
+            radioFreedomSquare.style.backgroundColor = "#032400";
+
+            setWaveAmplitudo(5);
         }
     }
 
@@ -56,8 +104,8 @@ export default function App() {
                 </div>
                 
                 <h1 className="title text-center text-[22px]">Fallout 4 Radio</h1>
-                <div className="waveIndicator text-center h-[144px] mt-[65px] border-b-[3px] border-r-[3px] border-[#14FF00]">
-                    <Wave className="bottom-1.5 left-0.5 relative" 
+                <div className="waveBox text-center h-[144px] mt-[65px] border-b-[3px] border-r-[3px] border-[#14FF00]">
+                    <Wave className="waveIndicator bottom-1.5 left-0.5 relative" 
                     fill='#032400'
                     stroke='#14FF00'
                     strokeWidth={5}
@@ -65,7 +113,7 @@ export default function App() {
                     style={{ display: 'flex' }}
                     options={{
                     height: 70,
-                    amplitude: 5,
+                    amplitude: waveAmplitudo,
                     speed: 2,
                     points: 20
                     }}
