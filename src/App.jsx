@@ -121,11 +121,16 @@ export default function App() {
                 </div>
                 <audio loop id='audioDiamondCity'
                     src="./utomp3.com - - Fallout 4  Full Diamond City Radio Playlist.mp3"
+                    crossOrigin="anonymous"
                 ></audio>
                 <audio loop id='audioClassicalRadio'
-                    src="./utomp3.com - - Fallout 4 Classical Radio all songs.mp3"></audio>
+                    src="./utomp3.com - - Fallout 4 Classical Radio all songs.mp3"
+                    crossOrigin="anonymous"
+                ></audio>
                 <audio loop id='audioRadioFreedom'
-                    src="./utomp3.com - Fallout 4   Radio Freedom   Minutemen Radio   Full Playlist Soundtrack.mp3"></audio>
+                    src="./utomp3.com - Fallout 4   Radio Freedom   Minutemen Radio   Full Playlist Soundtrack.mp3"
+                    crossOrigin="anonymous">
+                </audio>
                 <div className="stationOption text-center mt-[25px]">
                     <div onClick={playDiamondCityRadio} loop
                     className="diamondCityRadioOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
