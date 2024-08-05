@@ -16,5 +16,8 @@ Version Alpha 1:
 2. The Green Square Now Set When Station is Chosen
 3. Music Also Plays In The Background
 
+Version Alpha 2:
+1. Now There is SFX when hovering button and clicking button
+
 Next Goal:
 1. Make The Music Actually Play Lives

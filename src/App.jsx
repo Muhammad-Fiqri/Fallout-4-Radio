@@ -5,7 +5,19 @@ import { useState } from 'react';
 export default function App() {
     const [waveAmplitudo,setWaveAmplitudo] = useState(5);
 
+    function playSwitchSFX() {
+        let audioSwitchSfx = document.getElementById("audioSwitchSfx");
+        audioSwitchSfx.play();
+    }
+
+    function playHoverSFX() {
+        let audioHoverSfx = document.getElementById("audioHoverSfx");
+        audioHoverSfx.play();
+    }
+
     function playDiamondCityRadio() {
+        playSwitchSFX();
+
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
@@ -34,6 +46,8 @@ export default function App() {
     }
 
     function playClassicalRadio() {
+        playSwitchSFX();
+
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
@@ -62,6 +76,8 @@ export default function App() {
     }
 
     function playRadioFreedom() {
+        playSwitchSFX();
+
         let audioDiamondCity = document.getElementById("audioDiamondCity");
         let audioClassicalRadio = document.getElementById("audioClassicalRadio");
         let audioRadioFreedom = document.getElementById("audioRadioFreedom");
@@ -131,18 +147,26 @@ export default function App() {
                     src="./utomp3.com - Fallout 4   Radio Freedom   Minutemen Radio   Full Playlist Soundtrack.mp3"
                     crossOrigin="anonymous">
                 </audio>
+                <audio id="audioSwitchSfx"
+                    src="./utomp3.com - Fallout 4 Pipboy Switch sfx.mp3"
+                    crossOrigin="anonymous">
+                </audio>
+                <audio id="audioHoverSfx"
+                    src="./utomp3.com - Fallout 4 Pipboy Hover sfx.mp3"
+                    crossOrigin="anonymous">
+                </audio>
                 <div className="stationOption text-center mt-[25px]">
-                    <div onClick={playDiamondCityRadio} loop
+                    <div onClick={playDiamondCityRadio} onMouseEnter={playHoverSFX}
                     className="diamondCityRadioOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Diamond City Radio</p>
                     </div>
-                    <div onClick={playClassicalRadio} loop
+                    <div onClick={playClassicalRadio} onMouseEnter={playHoverSFX}
                     className="classicalRadioOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Classical Radio</p>
                     </div>
-                    <div onClick={playRadioFreedom} loop
+                    <div onClick={playRadioFreedom} onMouseEnter={playHoverSFX}
                     className="radioFreedomOption font-bold text-[16px] h-[42px] hover:bg-[#14FF00] grid grid-cols-[20%_80%] justify-items-center items-center hover:text-[#032400] cursor-pointer">
                         <div className="squareIcon w-[17px] h-[17px] bg-[#032400]"></div>
                         <p className="justify-self-start">Radio Freedom</p>
